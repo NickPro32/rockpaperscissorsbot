@@ -39,7 +39,7 @@ def callback_function1(callback_obj: telebot.types.CallbackQuery):
                 bot.send_message(person, 'Победа. Вам везет больше чем ' + callback_obj.from_user.username)
             else:
                 bot.send_message(callback_obj.from_user.id, 'Победа. Вам везет больше чем ' + name)
-                bot.send_message(person, 'Поражение ' + callback_obj.from_user.username + ' оказался удачливее')
+                bot.send_message(person, 'Поражение. ' + callback_obj.from_user.username + ' оказался удачливее')
         elif callback_obj.data == 'button2':
             if answer == 'button2':
                 bot.send_message(callback_obj.from_user.id, 'Ничья')
@@ -49,7 +49,7 @@ def callback_function1(callback_obj: telebot.types.CallbackQuery):
                 bot.send_message(person, 'Победа. Вам везет больше чем ' + callback_obj.from_user.username)
             else:
                 bot.send_message(callback_obj.from_user.id, 'Победа. Вам везет больше чем ' + name)
-                bot.send_message(person, 'Поражение ' + callback_obj.from_user.username + ' оказался удачливее')
+                bot.send_message(person, 'Поражение. ' + callback_obj.from_user.username + ' оказался удачливее')
         elif callback_obj.data == 'button3':
             if answer == 'button3':
                 bot.send_message(callback_obj.from_user.id, 'Ничья')
@@ -59,7 +59,7 @@ def callback_function1(callback_obj: telebot.types.CallbackQuery):
                 bot.send_message(person, 'Победа. Вам везет больше чем ' + callback_obj.from_user.username)
             else:
                 bot.send_message(callback_obj.from_user.id, 'Победа. Вам везет больше чем ' + name)
-                bot.send_message(person, 'Поражение ' + callback_obj.from_user.username + ' оказался удачливее')
+                bot.send_message(person, 'Поражение. ' + callback_obj.from_user.username + ' оказался удачливее')
         keyboard = telebot.types.InlineKeyboardMarkup()
         button1 = telebot.types.InlineKeyboardButton(text="Камень", callback_data="button1")
         button2 = telebot.types.InlineKeyboardButton(text="Ножницы", callback_data="button2")
