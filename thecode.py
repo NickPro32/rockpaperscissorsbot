@@ -1,4 +1,4 @@
-# @ardotcotbotardotcotbot
+# @ardotcotbot
 import telebot
 from dataclasses import dataclass
 import json
@@ -11,7 +11,6 @@ name = ''
 
 TOKEN = 'TOKEN'
 bot = telebot.TeleBot(TOKEN)
-
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message: telebot.types.Message):
@@ -36,30 +35,30 @@ def callback_function1(callback_obj: telebot.types.CallbackQuery):
                 bot.send_message(person, 'Ничья')
             elif answer == 'button3':
                 bot.send_message(callback_obj.from_user.id, 'Поражение ' + name + ' оказался удачливее')
-                bot.send_message(person, 'Победа. Вам везет больше чем ' + name)
+                bot.send_message(person, 'Победа. Вам везет больше чем ' + callback_obj.from_user.username)
             else:
                 bot.send_message(callback_obj.from_user.id, 'Победа. Вам везет больше чем ' + name)
-                bot.send_message(person, 'Поражение ' + name + ' оказался удачливее')
+                bot.send_message(person, 'Поражение ' + callback_obj.from_user.username + ' оказался удачливее')
         elif callback_obj.data == 'button2':
             if answer == 'button2':
                 bot.send_message(callback_obj.from_user.id, 'Ничья')
                 bot.send_message(person, 'Ничья')
             elif answer == 'button1':
                 bot.send_message(callback_obj.from_user.id, 'Поражение ' + name + ' оказался удачливее')
-                bot.send_message(person, 'Победа. Вам везет больше чем ' + name)
+                bot.send_message(person, 'Победа. Вам везет больше чем ' + callback_obj.from_user.username)
             else:
                 bot.send_message(callback_obj.from_user.id, 'Победа. Вам везет больше чем ' + name)
-                bot.send_message(person, 'Поражение ' + name + ' оказался удачливее')
+                bot.send_message(person, 'Поражение ' + callback_obj.from_user.username + ' оказался удачливее')
         elif callback_obj.data == 'button3':
             if answer == 'button3':
                 bot.send_message(callback_obj.from_user.id, 'Ничья')
                 bot.send_message(person, 'Ничья')
             elif answer == 'button2':
                 bot.send_message(callback_obj.from_user.id, 'Поражение ' + name + ' оказался удачливее')
-                bot.send_message(person, 'Победа. Вам везет больше чем ' + name)
+                bot.send_message(person, 'Победа. Вам везет больше чем ' + callback_obj.from_user.username)
             else:
                 bot.send_message(callback_obj.from_user.id, 'Победа. Вам везет больше чем ' + name)
-                bot.send_message(person, 'Поражение ' + name + ' оказался удачливее')
+                bot.send_message(person, 'Поражение ' + callback_obj.from_user.username + ' оказался удачливее')
         keyboard = telebot.types.InlineKeyboardMarkup()
         button1 = telebot.types.InlineKeyboardButton(text="Камень", callback_data="button1")
         button2 = telebot.types.InlineKeyboardButton(text="Ножницы", callback_data="button2")
