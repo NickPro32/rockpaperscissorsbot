@@ -21,7 +21,7 @@ def get_text_messages(message: telebot.types.Message):
 
 
 @bot.callback_query_handler(func=lambda call: True)
-def callback_function1(callback_obj: telebot.types.CallbackQuery):
+def callback_function(callback_obj: telebot.types.CallbackQuery):
     global waiting
     global answer
     global person
