@@ -1,8 +1,5 @@
 # @ardotcotbot
 import telebot
-from dataclasses import dataclass
-import json
-import requests
 
 waiting = False
 answer = ''
