@@ -12,6 +12,7 @@ name = ''
 TOKEN = 'TOKEN'
 bot = telebot.TeleBot(TOKEN)
 
+
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message: telebot.types.Message):
     keyboard = telebot.types.InlineKeyboardMarkup()
